@@ -4,11 +4,13 @@
 - 方法1:
 
     我的vps是在搬瓦工上的,在它KiwiVM管理端提供了一个一键安装的快捷操作,因此十分方便.
-    它的原理应该是直接是源码编译安装:源码安装包shadowsocksr.tar.gz我已放在Software目录下,感兴趣的同学可以自行研究
+    
+    也可以源码编译安装:源码安装包shadowsocksr.tar.gz我已放在Software目录下,感兴趣的同学可以自行研究
 
 - 方法2:
 
     pip 安装 # pip install shadowsocks
+    
     参考: https://github.com/shadowsocks/shadowsocks/wiki/Shadowsocks-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
 
 
