@@ -1,17 +1,17 @@
 
 ## 1.安装服务
 
-- 方法1:
+- 方法1：
 
-    我的vps是在搬瓦工上的,在它KiwiVM管理端提供了一个一键安装的快捷操作,因此十分方便.
+    我的vps是在搬瓦工上的，在它KiwiVM管理端提供了一个一键安装的快捷操作，因此十分方便
     
-    也可以源码编译安装:源码安装包shadowsocksr.tar.gz我已放在Software目录下,感兴趣的同学可以自行研究
+    也可以源码编译安装：源码安装包shadowsocksr.tar.gz我已放在Software目录下，感兴趣的同学可以自行研究
 
-- 方法2:
+- 方法2：
 
     pip 安装 # pip install shadowsocks
     
-    参考: https://github.com/shadowsocks/shadowsocks/wiki/Shadowsocks-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
+    参考： https://github.com/shadowsocks/shadowsocks/wiki/Shadowsocks-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
 
 
 ## 2.修改配置文件
@@ -30,9 +30,9 @@
     "fast_open": false
 }
 ```
-- 相关配置说明:
+- 相关配置说明
 
-参考: https://github.com/shadowsocks/shadowsocks/wiki/Configuration-via-Config-File
+参考： https://github.com/shadowsocks/shadowsocks/wiki/Configuration-via-Config-File
 
 | Name          | Explanation                                     |
 | ------------- | ----------------------------------------------- |
@@ -51,11 +51,16 @@
 
 - 启动port=443
 
+这个命令中有很多参数可以用的
 ```
 python /shadowsocksr/shadowsocks/server.py -s ::0 -o tls1.2_ticket_auth_compatible -p `cat /root/.kiwivm-shadowsocksr-port` -k `cat /root/.kiwivm-shadowsocksr-password` -m `cat /root/.kiwivm-shadowsocksr-encryption` --user nobody --workers 2 -d start
+or
+ssserver -p 443 -k password -m rc4-md5
+or
+sudo ssserver -p 443 -k password -m rc4-md5 --user nobody -d start
 ```
 
-- 服务启动:
+- 服务启动
 
 ```
 ssserver -c /etc/shadowsocks.json               #命令行启动
